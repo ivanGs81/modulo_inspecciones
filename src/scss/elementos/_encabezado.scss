@@ -1,0 +1,106 @@
+.contenedor{
+   @include containerFull();
+   padding-bottom: 80px;
+}
+.encabezado{
+   padding           : 20px 18px;
+   display           : flex;
+   width             : 100%;
+   //flex-direction    : column;
+   position          : relative;
+   //align-items       : center;
+   justify-content   : space-between;
+   @include from(m){
+      padding : 0 40px;
+      //justify-content   : space-between;
+      //flex-direction    : row;
+      //align-items       : center;
+   }
+   &__home{
+      padding: 12px 0;
+      &--link{
+         display: flex;
+         align-items: center;
+         span{color:$gris10;}
+
+         &:hover{
+            .home__icono--el{fill:$rojo;}
+            span{ font-weight: 900;}
+            text-decoration: none;
+         }
+      }
+   }
+   &__logout{
+      padding: 12px 0;
+      display: flex;
+      a{
+         display     : flex;
+         align-items : center;
+         color       : $gris10;
+         &:hover{
+            font-weight    : 900;
+            // p{ font-weight: 900;}
+            text-decoration: none;
+         }
+      }
+      p{
+         @include to(m){font-size:rem(12px)};
+      }
+      &--link{
+         display     : flex;
+         align-items : center;
+         color       : $gris10;
+         //p{color:$gris10;}
+
+         &:hover{
+            font-weight    : 900;
+            // p{ font-weight: 900;}
+            text-decoration: none;
+         }
+      }
+   }
+   &__sesion{ 
+      padding:6px 6px;
+      &--listado{
+         display         : flex;
+         flex-direction  : column;
+         list-style-type : none;
+         padding-left    : 0;
+         @include from(m){ flex-direction: row; }
+      }
+      &--list{
+         flex           : 0 0 auto;
+         display        : flex;
+         padding-top    : 12px;
+         padding-bottom : 12px;
+         justify-content: flex-end;
+         @include from(m){
+            padding-left : 12px;
+            padding-right: 12px;
+            align-items  : center;
+         }
+      }
+      &--link{
+         transform: scale(1);
+         display: block;
+         width: 33px;
+         &:hover{ animation: boink 0.5s alternate; }
+         &:active{ animation: boink 0.5s alternate; }
+      }
+   }
+}
+.fecha{
+   background  : $azOsc;
+   padding     : 17px;
+   //transform: translateY(-105px);
+   &__formato{
+      color       : #fff;
+      font-family : "Titulo";
+   }
+   &__dia{
+      font-size   : rem(30px);
+   }
+   &__anho{
+      font-size   : rem(38px);
+   }
+}

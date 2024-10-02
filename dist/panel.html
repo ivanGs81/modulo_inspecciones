@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css?t=1621542295471">
+    <link rel="stylesheet" href="css/fuentes/bebas-neue/font_bebas.css?t=1621542295471">
+    <link rel="stylesheet" href="css/fuentes/roboto/font_roboto.css?t=1621542295471">
+    <script src="js/anime.min.js?t=1621542295471"></script>
+    <title>Bandeja de inspecciones || Sistema de inspecciones</title>
+  </head>
+  <body>
+    <div class="contenedor">
+      <section class="encabezado">
+        <nav class="menu"><a class="menu__icono blur-js" id="abrirMenu" href="javascript:void(0);">
+            <div class="menu__icono--linea"></div>
+            <div class="menu__icono--linea"></div>
+            <div class="menu__icono--linea"></div></a>
+          <div class="menu__base" id="menuCont">
+            <div class="menu__base--cabecero"> <a class="menu__cerrar" href="javascript:void(0);" id="cerrarMenu"></a></div>
+            <div class="menu__envoltura">
+              <ul class="menu__nivel-1">
+                <li class="menu__nivel-1--item"><a href="#">Inspecciones</a></li>
+                <li class="menu__nivel-1--item"><a href="https://ed.team">Crear inspectores</a></li>
+                <li class="menu__nivel-1--item"><a href="#">Inspecciones 2</a></li>
+                <li class="menu__nivel-1--item"><a href="https://ed.team">Inspecciones 3</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="encabezado__sesion blur-js">
+          <ul class="encabezado__sesion--listado">
+            <li class="encabezado__sesion--list">
+              <p class="encabezado__sesion--text"><strong>Usuario:</strong> 1</p>
+            </li>
+            <li class="encabezado__sesion--list">
+              <p class="encabezado__sesion--text"><strong>Bienvenido:</strong> operaNave</p>
+            </li>
+            <li class="encabezado__sesion--list"><a class="encabezado__sesion--link" href="/" title="Salir"><img src="img/icon_logout.svg" alt=""></a></li>
+          </ul>
+        </div>
+      </section>
+      <section class="contenido blur-js">
+        <div class="titulo">
+          <h1>Bandeja de inspecciones</h1>
+        </div>
+        <div class="pag-editor">
+          <form class="pag-editor__form" action="" method="post">
+            <div class="pag-editor__campo pag-editor__campo3">
+              <label class="pag-editor__campo--label" for="">Capitanías</label>
+              <select name="prueba">
+                <option value="0">Callao</option>
+                <option value="0">Zorritos</option>
+                <option value="0">Pimentel</option>
+                <option value="0">Talara</option>
+              </select>
+            </div>
+            <div class="pag-editor__campo pag-editor__campo3">
+              <label class="pag-editor__campo--label" for="">Nave</label>
+              <input class="pag-editor__campo--texto" type="text" name=""/>
+            </div>
+            <div class="pag-editor__campo pag-editor__campo3">
+              <label class="pag-editor__campo--label" for="">N° Trámite</label>
+              <input class="pag-editor__campo--texto pag-editor__bloqueado" type="text" name=""/>
+            </div>
+            <div class="pag-editor__boton pag-editor__completo">
+              <button class="pag-editor__boton--save" type="submit" role="link">Actualizar</button>
+            </div>
+          </form>
+        </div>
+        <div class="detalles">
+          <ul class="menu-sec">
+            <li class="menu-sec__item bloq-select" id="bot-1">Pendientes</li>
+            <li class="menu-sec__item" id="bot-2">Registrados</li>
+            <li class="menu-sec__item" id="bot-3">Finalizados</li>
+          </ul>
+          <div class="tabla-resp bloq-oculto bloq-activo" id="bot-1-cont">
+            <table class="tabla-resp__tabla">
+              <thead>
+                <tr class="tabla-resp__header">
+                  <th class="tabla-resp__label">ID Trámite</th>
+                  <th class="tabla-resp__label">N° trámite</th>
+                  <th class="tabla-resp__label">Proceso</th>
+                  <th class="tabla-resp__label">ID Nave</th>
+                  <th class="tabla-resp__label">Matricula</th>
+                  <th class="tabla-resp__label">Nombre nave</th>
+                  <th class="tabla-resp__label">F. inspeccion</th>
+                  <th class="tabla-resp__label">Capitania</th>
+                  <th class="tabla-resp__label">Inspeccion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="tabla-resp__celda">2592540</td>
+                  <td class="tabla-resp__celda">00006479-01-2021</td>
+                  <td class="tabla-resp__celda">C26</td>
+                  <td class="tabla-resp__celda">35184</td>
+                  <td class="tabla-resp__celda">CO-10397-PN</td>
+                  <td class="tabla-resp__celda">Ernestina</td>
+                  <td class="tabla-resp__celda">23/04/2021</td>
+                  <td class="tabla-resp__celda">Callao</td>
+                  <td class="tabla-resp__celda">
+                    <div><a href="docs/doc01.pdf"><img src="img/download.svg" alt=""></a></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tabla-resp__celda">2592541</td>
+                  <td class="tabla-resp__celda">00006480-02-2021</td>
+                  <td class="tabla-resp__celda">C30</td>
+                  <td class="tabla-resp__celda">35184</td>
+                  <td class="tabla-resp__celda">CO-10397-PN</td>
+                  <td class="tabla-resp__celda">Carla</td>
+                  <td class="tabla-resp__celda">23/04/2021</td>
+                  <td class="tabla-resp__celda">Pisco</td>
+                  <td class="tabla-resp__celda">
+                    <div><a href="docs/doc02.pdf"><img src="img/download.svg" alt=""></a></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tabla-resp__celda">2592542</td>
+                  <td class="tabla-resp__celda">00006481-03-2021</td>
+                  <td class="tabla-resp__celda">C42</td>
+                  <td class="tabla-resp__celda">35184</td>
+                  <td class="tabla-resp__celda">CO-10397-PN</td>
+                  <td class="tabla-resp__celda">Rusito</td>
+                  <td class="tabla-resp__celda">23/04/2021</td>
+                  <td class="tabla-resp__celda">Pimentel</td>
+                  <td class="tabla-resp__celda">
+                    <div><a href="docs/doc03.pdf"><img src="img/download.svg" alt=""></a></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tabla-resp__celda">2592543</td>
+                  <td class="tabla-resp__celda">00006482-04-2021</td>
+                  <td class="tabla-resp__celda">C50</td>
+                  <td class="tabla-resp__celda">35184</td>
+                  <td class="tabla-resp__celda">CO-10397-PN</td>
+                  <td class="tabla-resp__celda">Chinita</td>
+                  <td class="tabla-resp__celda">23/04/2021</td>
+                  <td class="tabla-resp__celda">Zorritos</td>
+                  <td class="tabla-resp__celda">
+                    <div><a href="docs/doc03.pdf"><img src="img/download.svg" alt=""></a></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tabla-resp__celda">2592540</td>
+                  <td class="tabla-resp__celda">00006479-01-2021</td>
+                  <td class="tabla-resp__celda">C26</td>
+                  <td class="tabla-resp__celda">35184</td>
+                  <td class="tabla-resp__celda">CO-10397-PN</td>
+                  <td class="tabla-resp__celda">Ernestina</td>
+                  <td class="tabla-resp__celda">23/04/2021</td>
+                  <td class="tabla-resp__celda">Callao</td>
+                  <td class="tabla-resp__celda">
+                    <div><a href="docs/doc01.pdf"><img src="img/download.svg" alt=""></a></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tabla-resp__celda">2592541</td>
+                  <td class="tabla-resp__celda">00006480-02-2021</td>
+                  <td class="tabla-resp__celda">C30</td>
+                  <td class="tabla-resp__celda">35184</td>
+                  <td class="tabla-resp__celda">CO-10397-PN</td>
+                  <td class="tabla-resp__celda">Carla</td>
+                  <td class="tabla-resp__celda">23/04/2021</td>
+                  <td class="tabla-resp__celda">Pisco</td>
+                  <td class="tabla-resp__celda">
+                    <div><a href="docs/doc02.pdf"><img src="img/download.svg" alt=""></a></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tabla-resp__celda">2592542</td>
+                  <td class="tabla-resp__celda">00006481-03-2021</td>
+                  <td class="tabla-resp__celda">C42</td>
+                  <td class="tabla-resp__celda">35184</td>
+                  <td class="tabla-resp__celda">CO-10397-PN</td>
+                  <td class="tabla-resp__celda">Rusito</td>
+                  <td class="tabla-resp__celda">23/04/2021</td>
+                  <td class="tabla-resp__celda">Pimentel</td>
+                  <td class="tabla-resp__celda">
+                    <div><a href="docs/doc03.pdf"><img src="img/download.svg" alt=""></a></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tabla-resp__celda">2592543</td>
+                  <td class="tabla-resp__celda">00006482-04-2021</td>
+                  <td class="tabla-resp__celda">C50</td>
+                  <td class="tabla-resp__celda">35184</td>
+                  <td class="tabla-resp__celda">CO-10397-PN</td>
+                  <td class="tabla-resp__celda">Chinita</td>
+                  <td class="tabla-resp__celda">23/04/2021</td>
+                  <td class="tabla-resp__celda">Zorritos</td>
+                  <td class="tabla-resp__celda">
+                    <div><a href="docs/doc03.pdf"><img src="img/download.svg" alt=""></a></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tabla-resp__celda">2592543</td>
+                  <td class="tabla-resp__celda">00006482-04-2021</td>
+                  <td class="tabla-resp__celda">C50</td>
+                  <td class="tabla-resp__celda">35184</td>
+                  <td class="tabla-resp__celda">CO-10397-PN</td>
+                  <td class="tabla-resp__celda">Chinita</td>
+                  <td class="tabla-resp__celda">23/04/2021</td>
+                  <td class="tabla-resp__celda">Zorritos</td>
+                  <td class="tabla-resp__celda">
+                    <div><a href="docs/doc03.pdf"><img src="img/download.svg" alt=""></a></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="tabla-resp__separador">
+              <div class="paginador">
+                <div class="item-list">
+                  <ul id="paginador"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tabla-resp bloq-oculto" id="bot-2-cont">
+            <table class="tabla-resp__tabla">
+              <thead>
+                <tr class="tabla-resp__header">
+                  <th class="tabla-resp__label">ID Trámite</th>
+                  <th class="tabla-resp__label">N° trámite</th>
+                  <th class="tabla-resp__label">Proceso</th>
+                  <th class="tabla-resp__label">ID Nave</th>
+                  <th class="tabla-resp__label">Matricula</th>
+                  <th class="tabla-resp__label">Nombre nave</th>
+                  <th class="tabla-resp__label">F. inspeccion</th>
+                  <th class="tabla-resp__label">Capitania</th>
+                  <th class="tabla-resp__label">Inspeccion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="tabla-resp__celda">2592540</td>
+                  <td class="tabla-resp__celda">00006479-01-2021</td>
+                  <td class="tabla-resp__celda">C26</td>
+                  <td class="tabla-resp__celda">35184</td>
+                  <td class="tabla-resp__celda">CO-10397-PN</td>
+                  <td class="tabla-resp__celda">Ernestina</td>
+                  <td class="tabla-resp__celda">23/04/2021</td>
+                  <td class="tabla-resp__celda">Callao</td>
+                  <td class="tabla-resp__celda">
+                    <div><a href="docs/doc01.pdf"><img src="img/download.svg" alt=""></a></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tabla-resp bloq-oculto" id="bot-3-cont">
+            <table class="tabla-resp__tabla">
+              <thead>
+                <tr class="tabla-resp__header">
+                  <th class="tabla-resp__label">ID Trámite</th>
+                  <th class="tabla-resp__label">N° trámite</th>
+                  <th class="tabla-resp__label">Proceso</th>
+                  <th class="tabla-resp__label">ID Nave</th>
+                  <th class="tabla-resp__label">Matricula</th>
+                  <th class="tabla-resp__label">Nombre nave</th>
+                  <th class="tabla-resp__label">F. inspeccion</th>
+                  <th class="tabla-resp__label">Capitania</th>
+                  <th class="tabla-resp__label">Inspeccion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="tabla-resp__celda">2592540</td>
+                  <td class="tabla-resp__celda">00006479-01-2021</td>
+                  <td class="tabla-resp__celda">C26</td>
+                  <td class="tabla-resp__celda">35184</td>
+                  <td class="tabla-resp__celda">CO-10397-PN</td>
+                  <td class="tabla-resp__celda">Ernestina</td>
+                  <td class="tabla-resp__celda">23/04/2021</td>
+                  <td class="tabla-resp__celda">Callao</td>
+                  <td class="tabla-resp__celda">
+                    <div><a href="docs/doc01.pdf"><img src="img/download.svg" alt=""></a></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tabla-resp__celda">2592541</td>
+                  <td class="tabla-resp__celda">00006480-02-2021</td>
+                  <td class="tabla-resp__celda">C30</td>
+                  <td class="tabla-resp__celda">35184</td>
+                  <td class="tabla-resp__celda">CO-10397-PN</td>
+                  <td class="tabla-resp__celda">Carla</td>
+                  <td class="tabla-resp__celda">23/04/2021</td>
+                  <td class="tabla-resp__celda">Pisco</td>
+                  <td class="tabla-resp__celda">
+                    <div><a href="docs/doc02.pdf"><img src="img/download.svg" alt=""></a></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tabla-resp__celda">2592542</td>
+                  <td class="tabla-resp__celda">00006481-03-2021</td>
+                  <td class="tabla-resp__celda">C42</td>
+                  <td class="tabla-resp__celda">35184</td>
+                  <td class="tabla-resp__celda">CO-10397-PN</td>
+                  <td class="tabla-resp__celda">Rusito</td>
+                  <td class="tabla-resp__celda">23/04/2021</td>
+                  <td class="tabla-resp__celda">Pimentel</td>
+                  <td class="tabla-resp__celda">
+                    <div><a href="docs/doc03.pdf"><img src="img/download.svg" alt=""></a></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="js/main.min.js?t=1621542295471"></script>
+    <script src="js/jquery-3.6.0.min.js?t=1621542295471"></script>
+    <script src="js/jquery.simplePagination.js?t=1621542295471"></script>
+    <script src="js/paginador-jq.js?t=1621542295471"></script>
+    <script>effectMenu('abrirMenu', 'cerrarMenu', 'menuCont', '.blur-js');</script>
+  </body>
+</html>

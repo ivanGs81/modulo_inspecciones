@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css?t=1621542295458">
+    <link rel="stylesheet" href="css/fuentes/bebas-neue/font_bebas.css?t=1621542295458">
+    <link rel="stylesheet" href="css/fuentes/roboto/font_roboto.css?t=1621542295458">
+    <script src="js/anime.min.js?t=1621542295458"></script>
+    <title>Iniciar sesión || Sistema de inspecciones</title>
+  </head>
+  <body>
+    <div class="pag-login">
+      <div class="pag-login__cuerpo">
+        <section class="pag-login__recuadro"> 
+          <div class="pag-login__recuadro--contenido">
+            <div class="pag-login__recuadro--logo"><img class="pag-login__recuadro--img" src="img/icon_login.svg" alt=""></div>
+            <h2 class="pag-login__recuadro--titulo">sistema de inspecciones Tecnicas </h2>
+            <form class="pag-login__form tam-login" action="ç" method="post">
+                          <div class="pag-login__form--campo tam-login__user" id="campoUser">
+                            <label class="pag-login__label" for="">Usuario</label>
+                            <input class="pag-login__formText" type="text" name="">
+                          </div>
+                          <div class="pag-login__form--campo tam-login__user" id="campoPass">
+                            <label class="pag-login__label" for="">Contraseña</label>
+                            <input class="pag-login__formText" type="password" name="">
+                          </div>
+                          <div class="pag-login__form--campo tam-login__boton">
+                            <button class="pag-login__boton botonLargo" type="button" role="link" onclick="loginga()">ingresar</button>
+                          </div>
+            </form>
+            <p class="pag-login__recuadro--nota">
+              Para solicitar nuevo usuario, cambiar contraseña,
+              recuperar contraseña deberán comunicarse al telefono <a href="tel:9880437440">988 043 744</a>
+              
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="js/main.min.js?t=1621542295458"></script>
+    <script>
+      loginEffect('campoUser');
+      loginEffect('campoPass');
+    </script>
+  </body>
+</html>

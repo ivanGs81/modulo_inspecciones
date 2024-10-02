@@ -1,0 +1,7 @@
+include ../../includes/mixin.pug
+
+form(action="ç", method="post").pag-login__form.tam-login
+
+    +input("text", "Usuario", "pag-login__form--campo tam-login__user","pag-login__label", "campoUser")(class="pag-login__formText")
+    +input("password", "Contraseña", "pag-login__form--campo tam-login__user","pag-login__label", "campoPass")(class="pag-login__formText")
+    +boton("button", "ingresar", "pag-login__form--campo tam-login__boton")(class="pag-login__boton botonLargo", onclick="loginga()")

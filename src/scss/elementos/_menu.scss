@@ -1,0 +1,146 @@
+@mixin linea($color, $radius: no){
+	width       : 100%;
+	height      : 5px;
+	display     : block;
+	background  : $color;
+	@if $radius == si{
+		border-radius  : 2px;
+	}
+}
+
+.menu{
+	display     : flex;
+	align-items : center;
+	&__icono{
+		display        : flex;
+		flex-direction : column;
+		width          : 34px;
+		height         : 26px;
+		justify-content: space-between;
+		&--linea{
+			@include linea($azOsc);
+			transition  : 0.3s all;
+		}
+		&:hover{
+			.menu__icono--linea{background   : $rojo;}
+		}
+		&:active{
+			.menu__icono--linea{background   : $rojo;}
+		}
+	}
+	&__base{
+		display     : block;
+		position    : fixed;
+		width       : 100%;
+		height      : 100vh;
+		left        : 0;
+		top         : -100%;
+		z-index     : 500;
+		background  : rgba(255, 255, 255, 0.7);
+		opacity     : 0;
+		
+		transition  : all 0.3s ease-out;
+		&--cabecero{
+			width             : 100%;
+			display           : flex;
+			justify-content   : flex-end;
+			padding-right     : 20px;
+			margin-top        :30px;
+		}
+	}
+	&__cerrar{
+		height   : 35px;
+		width    : 35px;
+		&:before{
+			content   : "";
+			@include linea($rojo,si);
+			transform : translateY(15px) rotate(45deg);
+
+		}
+		&:after{
+			content  : "";
+			@include linea($rojo,si);
+			transform: translateY(11px) rotate(-45deg);
+		}
+	}
+	&__envoltura{
+		display: flex;
+		justify-content: center;
+	}
+	&__nivel-1{
+		list-style-type   : none;
+		padding-left      : 20px;
+		padding-right     : 20px;
+		border-bottom : 1px solid $rojo;
+		border-top    : 1px solid $rojo;
+		&--item{
+			padding-top    : em(18px);
+			padding-bottom : em(18px);
+			a{
+				width          : 100%;
+				display        : block;
+				text-align     : center;
+				font           : rem(30px) "Titulo";
+				text-transform : uppercase;
+				color          : $rojo;    
+				transition     : all 0.3s;
+				
+				&:hover{
+					text-decoration : none;
+					color           : $azOsc;
+				}
+			}
+		}
+	}
+	&__sesion{
+		list-style-type   : none;
+		padding-left      : 0;
+		&--item{
+			padding-top    : 18px;
+			padding-bottom : 18px;
+			a{
+				width       : 100%;
+				display     : block;
+				text-align  : center;
+				font-family : "Titulo";
+				font        : rem(30px) "Titulo";
+				color       : $rojo;
+				transition  : all 0.3s;
+				&:hover{
+					text-decoration : none;
+					color           : $azOsc;
+				}
+			}
+		}
+	}
+}
+.menu-sec{
+	display: flex;
+	list-style: none;
+	padding-left: 0;
+	&__item{
+		padding       : 6px 12px;
+		border-bottom : 1px solid $gris80;
+		&:hover{
+			background-color : lighten($gris90, 6%);
+			cursor			  : pointer;
+			font-weight      :600;
+		}
+	}
+}
+.active{
+	top : 0;
+	opacity: 1;
+}
+.blur{
+	filter: blur(18px) brightness(1.2);
+}
+.bloq-select{
+	border-top    : 3px solid $azulCob;
+	border-bottom : none;
+	border-left   : 1px solid $gris80;
+	border-right  : 1px solid $gris80;
+   cursor: default !important;
+	font-weight:600;
+	background-color: #fff !important;
+}

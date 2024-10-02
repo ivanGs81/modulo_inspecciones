@@ -1,0 +1,19 @@
+/* Aplicacion del mixin */
+@include compLogin("pag-login", 20);
+@include compLogin("pag-registro", 80);
+
+@include tamanho-login(user, 100);
+@include tamanho-login(pss, 100);
+
+@include tamanho-login(pass1, 100, 1/2, 1/2);
+@include tamanho-login(pass2, 100, 1/2, 1/2);
+
+@include tamanho-login(boton, 100);
+
+/*clase animacion campo*/
+.lab-active{
+   font-size : 0.9rem;
+   top       : -17px;
+   color     : $gris20;
+   left      : 15px;
+}

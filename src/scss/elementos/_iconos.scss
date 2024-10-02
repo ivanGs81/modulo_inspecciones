@@ -1,0 +1,11 @@
+/* icono "Home" */
+.home{
+   width: 29px;
+   margin-right: 7px;
+   &__icono--el{ fill: $amarillo; }
+}
+.logout{
+   width: 29px;
+   margin-right: 7px;
+   &__icono--path{ fill: $amarillo; }
+}

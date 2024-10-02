@@ -1,0 +1,12 @@
+/* CSS Document */
+@font-face{
+	font-family:"Titulo";
+	src:url(font/BebasNeueBold.eot);
+	src:url(font/BebasNeueBold.eot?#iefix) format("embedded-opentype"),
+		url(font/BebasNeueBold.ttf) format("truetype"),
+		url(font/BebasNeueBold.svg) format("svg"),
+		url(font/BebasNeueBold.woff) format('woff'),
+		url(font/BebasNeueBold.woff2) format('woff2');
+	font-weight:bold;
+
+}

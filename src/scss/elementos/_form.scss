@@ -1,0 +1,136 @@
+.pag-editor{
+   %input{
+      border-bottom  : 1px solid $gris70;
+      //width          : 100%;
+      display        : block;
+      font           : rem(15px) "Articulo";
+      padding        : 0 15px;
+   }
+   %label{
+      @include padding(0);
+      font-size: rem(12px);
+      @include from(m){
+         align-self: flex-end;
+         font-size: rem(15px);
+      }
+   }
+   select, input{
+      border:none;
+      background: transparent;
+      border-radius: 0;
+   }
+
+   @include edContainer;
+   &__titulo{
+      width: 100%;
+      text-align: center;
+      font-size: rem(30px);
+      color: $rojo;
+      margin-top: 90px;
+      @include from(l){
+         margin-top: 130px;
+         font-size: rem(45px);
+         margin-bottom: 79px;
+      }
+   }
+   &__form{
+      @include edItem(100);
+      @include edContainer;
+      @include from(l){
+         padding: 99px 74px;
+         border: 1px solid $gris80;
+         margin-bottom: 130px;
+      }
+      padding: 30px;
+   }
+   &__campo{
+      @include edContainer;
+      //padding-bottom: 22px;
+      // @include from(l){padding-bottom: 130px;}
+      position: relative;
+      margin-bottom: 25px;
+      &--label2{
+         font        : 1.2rem "Articulo";
+         position    : absolute;
+         top         : 6px;
+         left        : 15px;
+         color       : $gris80;
+         z-index     : -10;
+         transition  : all 0.7s;
+      }
+      &--label{
+         @include edItem(100, 1/2, 1/3);
+         @extend %label;
+      }
+      &--label3{
+         @include edItem(100, 1/2);
+         @extend %label;
+      }
+      &--select{
+         @extend %input;
+         @include edItem(100, 1/2, 2/3);
+      }
+      &--select2{
+         @extend %input;
+         @include edItem(100, 1/2);
+      }
+      &--date{
+         @extend %input;
+         @include edItem(100, 1/2, 2/3);
+      }
+      &--date2{
+         @extend %input;
+         @include edItem(100, 1/2);
+      }
+      &--texto{
+         @extend %input;
+         @include edItem(100, 1/2, 2/3);
+      }
+      &--texto2{
+         @extend %input;
+         @include edItem(100, 1/2);
+      }
+      &--extra{
+         @include from(l){padding-bottom: 130px;}
+      }
+   }
+   &__campo3{
+      @include edItem(100, 1/2, 1/3);
+   }
+   &__campo2{
+      @include edItem(100, 1/2);
+   }
+   &__campo4{
+      @include edItem(100, 1/2, 25);
+      @include fromTo(m, l){margin-bottom: 15px;}
+      
+   }
+   &__boton{
+      // @include edItem(100);
+      @include mainDistribute;
+      @include from(m){
+         @include mainEnd;
+      }
+      @include fromTo(m, l){width: 100%;}
+      &--save{
+         @include edgridButton($azulCob, #fff, radius);
+         @include from(m){margin-right: 12px;}
+         font-family: "Articulo";
+         font-size: rem(16px);
+      }
+      &--cancel{ @include edgridButton($rojo, #fff, radius);}
+
+   }
+   &__completo{ width: 100%; }
+   &__bloqueado{
+      @extend %input;
+      color: $gris80;
+   }
+}
+.required{
+   &:after{
+      content: "*";
+      padding-left: 5px;
+      color: $rojo;
+   }
+}

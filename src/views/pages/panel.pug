@@ -1,0 +1,26 @@
+extends  ../includes/base.pug
+include ../includes/mixin.pug
+
+block titulo
+	title Bandeja de inspecciones || Sistema de inspecciones
+
+block template
+	.contenedor
+		section.encabezado
+			include ../includes/menu
+			include ./elementos/encabezado
+			
+		section.contenido.blur-js
+			.titulo
+				h1 Bandeja de inspecciones
+			include ./elementos/filtro
+			.detalles
+				include ../includes/menu-sec
+				include ./elementos/tabla
+			
+block script
+	script(src="js/jquery-3.6.0.min.js")
+	script(src="js/jquery.simplePagination.js")
+	script(src="js/paginador-jq.js")
+	script.
+		effectMenu('abrirMenu', 'cerrarMenu', 'menuCont', '.blur-js');

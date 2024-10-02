@@ -1,0 +1,14 @@
+include ../pages/data/menu_data
+
+nav.menu
+	a#abrirMenu.menu__icono.blur-js(href="javascript:void(0);")
+		.menu__icono--linea
+		.menu__icono--linea
+		.menu__icono--linea
+	.menu__base#menuCont
+		.menu__base--cabecero 
+			a.menu__cerrar(href="javascript:void(0);")#cerrarMenu
+		.menu__envoltura
+			ul.menu__nivel-1
+					- for(i=0; i < menuPrinc.length; i++)
+						li.menu__nivel-1--item: a(href=menuPrinc[i].url)= menuPrinc[i].nombre

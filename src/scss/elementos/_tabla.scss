@@ -1,0 +1,112 @@
+%format-enlace{
+   text-align   : center;
+   font-size    : rem(10px);
+   display      : block;
+   flex         : auto;
+   border-right : 1px solid $gris90;
+   &:last-child{ border-right : none; }
+   &:hover{
+      font-family     : "Subtitulo";
+      text-decoration : none;
+   }
+}
+
+.titular-tabla{
+   background : $azulCob;
+   padding    : 10px;
+   h4{
+      font-size : rem(18px);
+      @include to(m){ font-size : rem(16px); }
+      color      : $blanco;
+      text-align : center;
+   }
+}
+.tabla-resp{
+   margin-bottom  : 30px;
+   display        : block;
+   width          : 100%;
+   @include to(l){ overflow-x : scroll; }
+   &__tabla{
+      @include to(m){ width : 1040px; }
+      @include from(m){ width : 100%; }
+      // border-left   : 1px solid $gris70;
+      // border-right  : 1px solid $gris70;
+      // border-bottom : 1px solid $gris70;
+      border          : 1px solid $gris90;
+      border-collapse : collapse;
+      tbody{ border : none; }
+   }
+   &__header{
+      border: none;
+   }
+   &__label{
+      border     : none;
+      padding    : 10px;
+      background : $azulCob;
+      text-align : center;
+      font-size  : rem(15px);
+      color      : #fff;
+      @include to(m){ width : 260px;}
+      @include from(m){ font-size : rem(12px); }
+      
+   }
+   &__celda{
+      border: 1px solid $gris90;
+      padding-top    : 8px;
+      padding-bottom : 8px;
+      // padding: 5px;
+      text-align: center;
+      background: #fff;
+      font-size: rem(12px);
+      
+      div{
+         display         : flex;
+         width           : 100%;
+         justify-content : space-around;
+         padding-left    : 5%;
+         padding-right   : 5%;
+         &:hover{
+            a{animation: boink 0.5s alternate;}
+         }
+         a{
+            width: 15px;
+            display: block;
+            transform: scale(1);
+         }
+      }
+   }
+   &__boton{
+      width: 19px;
+      height: 19px;
+      background: #fff;
+      &--edit{ 
+         fill: $gris70;
+         &:hover{ fill: $allow; }
+      }
+      &--del{
+         fill: $gris70;
+         &:hover{ fill: $rojo; }
+      }
+   }
+   &__nolink{
+      @extend %format-enlace;
+      color      : $gris60;
+      font-style : italic;
+      &:hover{
+         font-family: "Articulo";
+      }
+   }
+   &__separador{
+      width: 100%;
+      margin-top: 18px;
+   }
+}
+.paginador{
+   @include paginador($gris70, oscuro, conLinea);
+   width: 100%;
+}
+.celda-centro{ text-align: center; }
+.celda25{ width: 25%; }
+
+.bloq-oculto{ display: none; }
+.bloq-activo{ display: block; }

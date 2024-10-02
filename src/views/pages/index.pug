@@ -1,0 +1,22 @@
+extends  ../includes/base.pug
+
+block titulo
+	title Iniciar sesión || Sistema de inspecciones
+block template
+	.pag-login
+		.pag-login__cuerpo
+			section.pag-login__recuadro 
+				.pag-login__recuadro--contenido
+					.pag-login__recuadro--logo
+						img.pag-login__recuadro--img(src="img/icon_login.svg", alt="")
+					h2.pag-login__recuadro--titulo sistema de inspecciones Tecnicas 
+				
+					include ./elementos/formula
+					p.pag-login__recuadro--nota.
+						Para solicitar nuevo usuario, cambiar contraseña,
+						recuperar contraseña deberán comunicarse al telefono <a href="tel:9880437440">988 043 744</a>
+
+block script
+	script.
+		loginEffect('campoUser');
+		loginEffect('campoPass');

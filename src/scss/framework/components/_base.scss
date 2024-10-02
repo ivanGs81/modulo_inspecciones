@@ -1,0 +1,43 @@
+// RWD Bases
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin      : 0;
+  //font-family : sans-serif;
+  font-family : "Articulo";
+}
+h1, h2{
+  font-family : "Titulo";
+  margin      : 0;
+}
+h3, h4, h5, h6{
+  font-family : "Subtitulo";
+  font-weight : normal;
+  margin      : 0;
+}
+
+// Imágenes responsive
+img {
+  // max-width : 100%;
+  width     : 100%;
+  height    : auto;
+}
+.svg{
+  width  : 100%;
+  height : 100%;
+}
+a {
+  text-decoration : none;
+
+  &:hover { text-decoration : underline }
+}
+
+p{
+  margin  : 0;
+  padding : 0;
+  display : block;
+}

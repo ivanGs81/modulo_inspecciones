@@ -1,0 +1,486 @@
+
+/*
+******** colores base ************
+*/
+$azOsc              : #001E38;
+$azulCob            : #1483C6;
+$rojo               : #c04527;
+$amarillo           : #D49C26;
+
+$allow              : #358d01;
+$tono-borde-enc-pie : 5%;
+
+$fondo-azul: '../img/textura-azul.jpg';
+$fondo-gris: '../img/textura_gris.jpg';
+/*
+***********************************
+*/
+
+/*
+******** grises ************
+*/
+$blanco  : #fff;
+$negro   : #000;
+
+$gris10  : lighten($negro, 10%);
+$gris20  : lighten($negro, 20%);
+$gris30  : lighten($negro, 30%);
+$gris40  : lighten($negro, 40%);
+$gris50  : lighten($negro, 50%);
+$gris60  : lighten($negro, 60%);
+$gris70  : lighten($negro, 70%);
+$gris80  : lighten($negro, 80%);
+$gris90  : lighten($negro, 90%);
+/*
+***********************************
+*/
+/*
+*********** mixins ******************
+*/
+@mixin containerFull(){
+   display      : flex;
+   flex-wrap    : wrap;
+   //width        : 100%;
+}
+
+@mixin paddVert($unidad:1){
+	padding-top    : $gutter * $unidad;
+  	padding-bottom : $gutter * $unidad;
+}
+
+@mixin paginador($color, $tono, $linea: sinLinea){
+   .item-list{
+      // @include edContainer;
+      @include mainJustify();
+      @if($linea == conLinea){
+         border-top: 1px solid $color;
+      } @else { border-top: none }
+      ul{
+         margin     : 0;
+         text-align : inherit;
+         clear      : none;
+         li{
+            margin  : 0;
+            display : block;
+            padding : 0;
+         }
+      }
+      .pager{
+         @include edItem(100);
+         display         : flex;
+         justify-content : center;
+         padding         : 15px 0;
+         .arrow{
+            display         : flex;
+            align-items     : center;
+            justify-content : center;
+            width           : 30px;
+            height          : 30px;
+
+            // color de fondo de flecha
+            @if($tono == oscuro){
+               background : $color; 
+            } @else {
+               background : lighten($color, 35%);
+            }
+            
+            border-radius   : 50%;
+            margin          : 0 5px;
+            transition      : all .4s;
+            a{
+               // color de texto de flecha
+               @if($tono == oscuro){
+                  color : lighten($color, 50%); 
+               }@else { 
+                  color : darken($color, 5%);
+               }
+               
+               font-size   : 10px;
+               display     : block;
+               font-family : "iconos-web";
+            }
+            &:hover{
+               // color de fondo de flecha al colocar encina el puntero.
+               @if($tono == oscuro){
+                  background : darken($color, 10%); 
+               } @else {
+                  background : lighten($color, 40%);
+               }
+               
+               a:hover{ 
+                  text-decoration : none;
+
+                  @if($tono == oscuro){
+                     color : lighten($color, 50%); 
+                  } @else { color: $color; }
+                  
+               }
+            }
+         }
+         %fijos{
+            display         : flex;
+            align-items     : center;
+            justify-content : center;
+            width           : 30px;
+            height          : 30px;
+            border-radius   : 50%;
+            margin          : 0 5px;
+            font-size       : 15px;
+
+            // color de texto de flecha al colocar encina el puntero.
+            @if($tono == oscuro){
+               color : lighten($color, 50%);
+            } @else {
+               color : darken($color, 5%); 
+            }
+
+            font-family     : "Subtitulo";
+         }
+         li{
+            display         : flex;
+            align-items     : center;
+            justify-content : center;
+            width           : 30px;
+            height          : 30px;
+
+            // color de fondo de numeros.
+            @if( $tono == oscuro ){
+               background : $color;
+            }@else {
+               background : lighten($color, 35%);
+            }
+
+            border-radius   : 50%;
+            margin          : 0 5px;
+            transition      : all .4s;
+            &:first-child{
+               position: relative;
+               margin-right: 15px;
+               &:after{
+                  position     : absolute;
+                  content      : "";
+                  border-left  : 1px solid $gris70;
+                  height       : 20px;
+                  right        : -10px;
+               }
+            }
+            &:last-child{
+               position    : relative;
+               margin-left : 15px;
+               &:after{
+                  position     : absolute;
+                  content      : "";
+                  border-right : 1px solid $gris70;
+                  height       : 20px;
+                  left         : -10px;
+               }
+            }
+            a{ 
+               // color de texto de numeros.
+               @if($tono == oscuro){
+                  color : lighten($color, 60%);
+               } @else {
+                  color: darken($color, 30%);
+               }
+
+               font-size : 15px;
+               display   : block;
+            }
+            
+            &:hover{
+               // color de fondo de los numeros al colocar encina el puntero.
+               @if ($tono == oscuro){
+                  background : darken($color, 10%); 
+               } @else {
+                  background : lighten($color, 40%);
+               }
+
+               a:hover{ 
+                  text-decoration : none;
+                  @if($tono == oscuro){
+                     color : lighten($color, 50%);
+                  } @else {
+                     color : darken($color, 30%);
+                  }
+                  
+               }
+            }
+         }
+         
+         .active{
+            @extend %fijos;
+            
+            @if ($tono == oscuro){
+               background : darken($color, 20%);
+            } @else {
+               background : lighten($color, 48%);
+            }
+            .current{
+               @if ($tono == oscuro){
+                  color : darken($color, 3%);
+               } @else {
+                  color : lighten($color,40%);
+               }
+            }
+            
+         }
+         .disabled{
+            @extend .active;
+
+         }
+         .pager-ellipsis{
+            @extend %fijos;
+
+            @if ($tono == oscuro){
+               background : darken($color, 20%);
+            } @else {
+               background : lighten($color, 48%);
+            } 
+         }
+         .pager-first{
+            @extend .arrow;
+            @include showFrom(m);
+         }
+         .pager-previous{
+            @extend .arrow; 
+            margin-right : 15px;
+         }
+         .pager-next{ 
+            @extend .arrow;
+            margin-left : 15px;
+         }
+         
+      }
+   }
+}
+
+@mixin compLogin($class-base, $ancho:1){
+   .#{$class-base}{
+      width  : 100%;
+      height : 100vh;
+      @include containerFull;
+      @include to(l){
+         align-items: flex-start;
+         padding-top: 60px;
+      }
+      &__cuerpo{
+         @include edItem(100);
+         @include padding(0);
+         @include to(l){
+            padding-left   : 30px;
+            padding-right  : 30px;
+            display        : flex;
+            flex-direction : column;
+         }
+      }
+      &__opciones{
+         @include edContainer;
+         padding : 10px 0;
+         @include to(l){
+            border-top : 1px solid $gris80;
+            order      : 1;
+         }
+         &--link{
+            @include edItem(100, 100, 1/3);
+            @include padding(0);
+            padding-top    : 10px;
+            padding-bottom : 10px;
+            text-align     : center;
+            @include from(l){
+               border-right : 1px solid $gris70;
+               &:last-child{border-right : none;}
+               
+            }
+            a{
+               color          : $gris20;
+               display        : block;
+               padding-top    : 5px;
+               padding-bottom : 5px;
+               position       : relative;
+               &::after{
+                  content    : "";
+                  height     : 2px;
+                  background : $rojo;
+                  width      : 0;
+                  display    : block;
+                  position   : absolute;
+                  bottom     : -15px;
+                  left       : 50%;
+                  transition : all .6s;
+               }
+               &:hover, &:active{
+                  font-family     : "Subtitulo";
+                  text-decoration : none;
+                  &::after{
+                     width : 25%;
+                     left  : 37.5%;
+                  }
+               }
+            }
+         }
+      }
+      &__recuadro{
+         @include mainCenter;
+         @include from(l){
+            align-items: center;
+            height: 90vh;
+         }
+         &--logo{
+            @include mainCenter;
+            padding : 18px 0;
+         }
+         &--img{
+            display : block;
+            //opacity : 0.5;
+            width   : 60px;
+         }
+         &--titulo{
+            color      : $rojo;
+            font-size  : rem(35px);
+            text-align : center;
+            margin-top : 15px;
+         }
+         &--contenido{
+            $calcAncho: $ancho/100;
+            $calcAnchoTab: $calcAncho*3;
+            @include from(m){width: percentage($calcAnchoTab);}
+            @include from(l){width: percentage($calcAncho);}
+         }
+         &--nota{
+            font-size  : rem(12px);
+            text-align : center;
+            @include from(m){ font-size  : rem(13px); }
+         }
+      }
+      &__form{
+         margin   : 0;
+         padding  : 0;
+         @include from(m){
+            padding  : 18px;
+            border   : 1px solid $gris70;
+            margin-top     : 18px;
+            margin-bottom  : 18px;
+         }
+         
+         &--campo{
+            margin-top     : 30px;
+            margin-bottom  : 30px;
+            position       : relative;
+         }
+      }
+      &__label{
+         font        : 1.2rem "Articulo";
+         position    : absolute;
+         top         : 6px;
+         left        : 15px;
+         color       : $gris80;
+         z-index     : -10;
+         transition  : all 0.7s;
+
+         &:after{
+            content      : "*";
+            color        : $rojo;
+            padding-left : 5px;
+         }
+      }
+      &__formText{
+         border-top    : none;
+         border-left   : none;
+         border-right  : none;
+         border-bottom : 1px solid $gris50;
+         width         : 100%;
+         font          : 1.2rem 'Articulo';
+         padding       : 5px 15px;
+         background    : transparent;
+      }
+      &__select{
+         border-top    : none;
+         border-left   : none;
+         border-right  : none;
+         border-bottom : 1px solid $gris50;
+         width         : 100%;
+         font          : 1.2rem 'Articulo';
+         padding       : 5px 15px;
+         background    : transparent;
+         border-radius : 0;
+      }
+      &__descripcion{
+         font-size      : rem(11px);
+         padding-top    : 10px;
+         padding-bottom : 10px;
+      }
+      &__boton{
+         @include  edgridButton( $azulCob, $blanco, radius );
+         font-size    : rem(12px);
+         margin-left  : auto;
+         margin-right : 0;
+      }
+   }
+}
+@mixin troquelEscudo($altura, $ubSup) {
+   .ico-inicio{
+      & > a{
+         @include from(l){
+            &:after{
+               content       : "";
+               display       : block;
+               height        : $altura;
+               background    : $azOsc;
+               position      : absolute;
+               width         : 100%;
+               top           : $ubSup;
+               border-radius : 0 0 50% 50%;
+               border-left   : 1px solid darken($amarillo, $tono-borde-enc-pie);
+               border-right  : 1px solid darken($amarillo, $tono-borde-enc-pie);
+               border-bottom : 1px solid darken($amarillo, $tono-borde-enc-pie);
+            }
+         }
+      }
+   }
+}
+@mixin iconoEnl($nro, $caracter){
+   &:nth-child(#{$nro}){
+      .link-internos__enlace{
+         transition : all 0.5s ease-out;
+         &::before{
+            font: rem(45px) "iconos-web";
+            content        : $caracter;
+            display        : block;
+            color          : $azulCob;
+            padding-bottom : 15px;
+            transition: all 0.5s ease-out;
+         }
+         &:hover{
+            &::before{
+               //transform: translateY(-20px);
+               color     : $azOsc;
+               animation : rebote 0.4s linear;
+            }
+            
+            text-decoration : none;
+            @keyframes rebote {
+               0%,50%,100%{ transform: translatex(0); }
+               25%{ 
+                  transform: translateX(-20px);
+                  opacity: 0;
+               }
+               75%{ transform: translateX(20px); }
+            }
+         }
+      }
+   }
+}
+
+@mixin tamanho-login($campo, $tamS, $tamM:$tamS, $tamL:$tamM){
+   .tam-login{
+      @include containerFull;
+      &__#{$campo}{
+         @include edItem($tamS, $tamM, $tamL);
+         text-align: right;
+      }
+   }
+}
+
+/*
+***********************************
+*/

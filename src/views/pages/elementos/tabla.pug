@@ -1,0 +1,85 @@
+include ../data/tabla_data
+
+.tabla-resp.bloq-oculto.bloq-activo#bot-1-cont
+	table.tabla-resp__tabla
+		thead
+			tr.tabla-resp__header
+				th.tabla-resp__label(scope=col) ID Trámite
+				th.tabla-resp__label(scope=col) N° trámite
+				th.tabla-resp__label(scope=col) Proceso
+				th.tabla-resp__label(scope=col) ID Nave
+				th.tabla-resp__label(scope=col) Matricula
+				th.tabla-resp__label(scope=col) Nombre nave
+				th.tabla-resp__label(scope=col) F. inspeccion
+				th.tabla-resp__label(scope=col) Capitania
+				th.tabla-resp__label(scope=col) Inspeccion
+
+		tbody
+			- for(i=0; i<tramPendiente.length; i++)
+				tr
+					td.tabla-resp__celda= tramPendiente[i].id
+					td.tabla-resp__celda= tramPendiente[i].numero
+					td.tabla-resp__celda= tramPendiente[i].proceso
+					td.tabla-resp__celda= tramPendiente[i].idNave
+					td.tabla-resp__celda= tramPendiente[i].matricula
+					td.tabla-resp__celda= tramPendiente[i].nombre
+					td.tabla-resp__celda= tramPendiente[i].fecha
+					td.tabla-resp__celda= tramPendiente[i].capitania
+					td.tabla-resp__celda: div: a(href=tramPendiente[i].url): img(src="img/download.svg", alt="")
+	.tabla-resp__separador
+		include ../../includes/paginador
+
+
+.tabla-resp.bloq-oculto#bot-2-cont
+	table.tabla-resp__tabla
+		thead
+			tr.tabla-resp__header
+				th.tabla-resp__label(scope=col) ID Trámite
+				th.tabla-resp__label(scope=col) N° trámite
+				th.tabla-resp__label(scope=col) Proceso
+				th.tabla-resp__label(scope=col) ID Nave
+				th.tabla-resp__label(scope=col) Matricula
+				th.tabla-resp__label(scope=col) Nombre nave
+				th.tabla-resp__label(scope=col) F. inspeccion
+				th.tabla-resp__label(scope=col) Capitania
+				th.tabla-resp__label(scope=col) Inspeccion
+
+		tbody
+			- for(i=0; i<tramRegistrados.length; i++)
+				tr
+					td.tabla-resp__celda= tramRegistrados[i].id
+					td.tabla-resp__celda= tramRegistrados[i].numero
+					td.tabla-resp__celda= tramRegistrados[i].proceso
+					td.tabla-resp__celda= tramRegistrados[i].idNave
+					td.tabla-resp__celda= tramRegistrados[i].matricula
+					td.tabla-resp__celda= tramRegistrados[i].nombre
+					td.tabla-resp__celda= tramRegistrados[i].fecha
+					td.tabla-resp__celda= tramRegistrados[i].capitania
+					td.tabla-resp__celda: div: a(href=tramRegistrados[i].url): img(src="img/download.svg", alt="")
+
+.tabla-resp.bloq-oculto#bot-3-cont
+	table.tabla-resp__tabla
+		thead
+			tr.tabla-resp__header
+				th.tabla-resp__label(scope=col) ID Trámite
+				th.tabla-resp__label(scope=col) N° trámite
+				th.tabla-resp__label(scope=col) Proceso
+				th.tabla-resp__label(scope=col) ID Nave
+				th.tabla-resp__label(scope=col) Matricula
+				th.tabla-resp__label(scope=col) Nombre nave
+				th.tabla-resp__label(scope=col) F. inspeccion
+				th.tabla-resp__label(scope=col) Capitania
+				th.tabla-resp__label(scope=col) Inspeccion
+
+		tbody
+			- for(i=0; i<tramFinalizados.length; i++)
+				tr
+					td.tabla-resp__celda= tramFinalizados[i].id
+					td.tabla-resp__celda= tramFinalizados[i].numero
+					td.tabla-resp__celda= tramFinalizados[i].proceso
+					td.tabla-resp__celda= tramFinalizados[i].idNave
+					td.tabla-resp__celda= tramFinalizados[i].matricula
+					td.tabla-resp__celda= tramFinalizados[i].nombre
+					td.tabla-resp__celda= tramFinalizados[i].fecha
+					td.tabla-resp__celda= tramFinalizados[i].capitania
+					td.tabla-resp__celda: div: a(href=tramFinalizados[i].url): img(src="img/download.svg", alt="")

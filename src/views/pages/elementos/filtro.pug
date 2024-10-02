@@ -1,0 +1,10 @@
+include ../data/select_data
+
+.pag-editor
+    form.pag-editor__form(action="", method="post")
+        +seleccion("Capitanías", "pag-editor__campo pag-editor__campo3", "pag-editor__campo--label")
+            - for(i=0; i<cap.length; i++)
+                option(value="0")= cap[i]
+        +input("text", "Nave", "pag-editor__campo pag-editor__campo3", "pag-editor__campo--label")(class="pag-editor__campo--texto")
+        +input("text", "N° Trámite", "pag-editor__campo pag-editor__campo3", "pag-editor__campo--label")(class="pag-editor__campo--texto pag-editor__bloqueado")
+        +boton("submit", "Actualizar", "pag-editor__boton pag-editor__completo")(class="pag-editor__boton--save")

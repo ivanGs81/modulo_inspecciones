@@ -1,0 +1,20 @@
+//- mixin de formulario
+
+mixin input(atribb, lab, claseDiv, classLabel, miID1)
+    div(class=claseDiv, id=miID1)
+        label(for="", class=classLabel)= lab
+        input(type= atribb , name="", class=attributes.class, id=attributes.id)
+
+mixin boton(attrib, nombre, claseDiv, miID1)
+    div(class=claseDiv, id=miID1)
+        button(type= attrib, role='link', class=attributes.class, id=attributes.id, onclick=attributes.onclick)= nombre
+
+mixin seleccion(lab, classDiv, classLabel, miID)
+    div(class=classDiv, id=miID)
+        label(for="", class=classLabel)= lab
+        select(name="prueba")
+            if block
+                block
+            else
+                option(value="o") colocar un opcion 
+//- mixin de formualrio  - FIN
